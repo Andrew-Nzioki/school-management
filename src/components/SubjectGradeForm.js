@@ -1,7 +1,6 @@
 function SubjectGradeForm() {
   return (
-    <div>
-      <h3>Enter the students Grade</h3>
+    <div className="student-form">
       <label>
         Grade
         <input text="text" placeholder="enter subject grade" />
@@ -22,7 +21,9 @@ function SubjectGradeForm() {
           <option value="MUSIC">MUSIC</option>
         </select>
       </label>
-      <button type="submit">Add Grade</button>
+      <button type="submit" className="btn btn-outline-secondary btn-sm">
+        Add Grade
+      </button>
     </div>
   );
 }
