@@ -47,21 +47,89 @@
   margin-right: 5px;
 }
 .student-form {
-  margin-left: 150px;
-  margin-right: 150px;
+  
   box-shadow: 8px 20px 65px 51px rgba(0,0,0,0.1);
   border-radius: 5px;
 }
 button,
 select,
-input {
-  border: none;
-  padding: 0.5rem;
-  border-radius: 4px;
-  font-size: 1rem;
-  background: var(--background-light);
-  
-}
+
 label{
   color: #282c34;
+}
+/* CSS code */
+table {
+  margin-bottom: 1rem;
+  color: #212529;
+  vertical-align: top;
+  border-collapse: collapse;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+th,
+td {
+  padding: 0.75rem;
+  vertical-align: top;
+  border-top: 1px solid #dee2e6;
+}
+
+thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.table-hover tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.075);
+}
+
+.table-primary,
+.table-primary > th,
+.table-primary > td {
+  background-color: #c6e0f5;
+}
+
+.table-primary th,
+.table-primary td,
+.table-primary thead th,
+.table-primary tbody + tbody {
+  border-color: #95c5ed;
+}
+
+@media screen and (max-width: 576px) {
+  /* Responsive styles for screens smaller than 576px */
+  table {
+    overflow-x: auto;
+    display: block;
+    white-space: nowrap;
+  }
+
+  th,
+  td {
+    display: block;
+    text-align: center;
+  }
+
+  th {
+    text-align: center !important;
+  }
+
+  tbody tr {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  tbody td {
+    display: inline-block;
+  }
+
+  tbody td:before {
+    content: attr(data-label);
+    display: inline-block;
+    font-weight: bold;
+    width: 70px;
+  }
 }

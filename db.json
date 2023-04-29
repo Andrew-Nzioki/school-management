@@ -1,5 +1,49 @@
 {
-    "students":[
-        {"id":1, "name":"John"}
+    "students": [
+        {
+            "id": 1,
+            "name": "John Smith",
+            "class": "10A",
+            "gender": "Male",
+            "mathematics":23,
+            "english":12,
+            "kiswahili":34,
+            "science":50,
+            "sst":78
+              
+        },
+        {
+            "id": 2,
+            "name": "Jane Doe",
+            "class": "10B",
+            "gender": "Female",
+            "mathematics":34,
+            "english":34,
+            "kiswahili":34,
+            "science":34,
+            "sst":34
+        },
+        {
+            "id": 3,
+            "name": "Bob Johnson",
+            "class": "10A",
+            "gender": "Male",
+            "mathematics":34,
+            "english":34,
+            "kiswahili":34,
+            "science":34,
+            "ss":34
+        },
+        {
+            "id": 4,
+            "name": "Alice Brown",
+            "class": "10C",
+            "gender": "Female",
+            "mathematics":34,
+            "english":34,
+            "kiswahili":34,
+            "science":34,
+            "sst":34
+        }
     ]
 }

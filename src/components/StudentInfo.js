@@ -1,13 +1,32 @@
-function StudentInfo() {
+function StudentInfo({ students }) {
   return (
-    <div>
-      <h4>Students student ID</h4>
-      <h4>Students name</h4>
-      <h4>Student gender </h4>
-      <h4>Student class </h4>
-     <ul>
-        grades list
-     </ul>
+    <div className="container my-3">
+      <hr />
+      <table>
+        <th>student ID</th>
+        <th>student name</th>
+        <th>student gender</th>
+        <th>Mathematics</th>
+        <th>English</th>
+        <th>Kiswahili</th>
+        <th>SST</th>
+        <th>Science</th>
+        <tbody>
+          {students.map((student) => (
+            <tr>
+              <td>{student.id}</td>
+              <td>{student.name}</td>
+              <td>{student.gender}</td>
+              <td>{student.mathematics}</td>
+              <td>{student.english}</td>
+              <td>{student.kiswahili}</td>
+
+              <td>{student.science}</td>
+              <td>{student.sst}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 }
