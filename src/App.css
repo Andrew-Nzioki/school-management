@@ -58,7 +58,9 @@ label{
   color: #282c34;
 }
 /* CSS code */
+/* CSS code */
 table {
+  width: 100%;
   margin-bottom: 1rem;
   color: #212529;
   vertical-align: top;
@@ -105,12 +107,15 @@ thead th {
     overflow-x: auto;
     display: block;
     white-space: nowrap;
+    margin-left: 10px;
+    margin-right: 10px;
   }
 
   th,
   td {
     display: block;
     text-align: center;
+    width: 100%;
   }
 
   th {
@@ -120,16 +125,28 @@ thead th {
   tbody tr {
     display: inline-block;
     vertical-align: top;
+    width: 100%;
+    margin-bottom: 10px;
   }
 
   tbody td {
     display: inline-block;
+    width: 100%;
+    border-top: none;
+    position: relative;
+    padding-left: 50%;
+    text-align: left;
   }
 
   tbody td:before {
     content: attr(data-label);
     display: inline-block;
     font-weight: bold;
-    width: 70px;
+    width: 45%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding-left: 15px;
+    text-align: left;
   }
 }

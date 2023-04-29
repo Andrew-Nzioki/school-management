@@ -5,7 +5,7 @@ import StudentInfo from "./components/StudentInfo"
 import SubjectGradeForm from "./components/SubjectGradeForm"
 import Header from "./components/Header"
 import StudentsList from "./components/StudentsList"
-
+import Filter from "./components/Filter"
 const url='http://localhost:5000/students'
 function App() {
  const [students,setStudents]=useState([])
@@ -17,6 +17,7 @@ useEffect(()=>{
   return (
     <div className="App">
       <Header />
+      <Filter/>
       <SubjectGradeForm students={students}/>
       <StudentInfo students={students}/>
       <StudentsList students={students}/>

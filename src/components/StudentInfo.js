@@ -17,16 +17,16 @@ function StudentInfo({ students }) {
               <td>{student.id}</td>
               <td>{student.name}</td>
               <td>{student.gender}</td>
-              <td>{student.mathematics}</td>
-              <td>{student.english}</td>
-              <td>{student.kiswahili}</td>
-
-              <td>{student.science}</td>
-              <td>{student.sst}</td>
+              <td>Math: {student.mathematics}</td>
+              <td>Eng:{student.english}</td>
+              <td>Kisw:{student.kiswahili}</td>
+              <td>sci: {student.science}</td>
+              <td>SST:{student.sst}</td>
             </tr>
           ))}
         </tbody>
       </table>
+      <hr/>
     </div>
   );
 }
