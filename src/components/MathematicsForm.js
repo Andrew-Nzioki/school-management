@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 
-const onlineUrl='https://school-api-s1sp.onrender.com/students'
+const onlineUrl = "https://school-api-s1sp.onrender.com/students";
 const localurl = "http://localhost:5000/students";
-const url=onlineUrl
+const url = onlineUrl;
 const MathematicsForm = () => {
   const [students, setStudents] = useState([]);
   const [mathematics, setMathematics] = useState("");
@@ -54,7 +54,7 @@ const MathematicsForm = () => {
   }
 
   return (
-    <>
+    <div>
       <div className="formItems">
         <form className="w-25 form-floating" onSubmit={handleSubmit}>
           <h5>Mathematics Marks</h5>
@@ -81,24 +81,26 @@ const MathematicsForm = () => {
 
       <hr />
       <h3>Mathematics Marks</h3>
-      <table className="ms-2 table w-75">
-        <thead className="text-center">
-        <th>Name</th>
-        <th>Science</th>
-        </thead>
-        
-        {students.map((student) => (
-          <>
-            <tbody>
-              <tr>
-                <td>{student.name}</td>
-                <td>{student.mathematics}</td>
-              </tr>
-            </tbody>
-          </>
-        ))}
-      </table>
-    </>
+      <div className="containerTable">
+        <table className="ms-2 table w-75 table w-75 table-dark table-striped ">
+          <thead className="text-center">
+            <th>Name</th>
+            <th>Mathematics</th>
+          </thead>
+
+          {students.map((student) => (
+            <>
+              <tbody>
+                <tr>
+                  <td>{student.name}</td>
+                  <td>{student.mathematics}</td>
+                </tr>
+              </tbody>
+            </>
+          ))}
+        </table>
+      </div>
+    </div>
   );
 };
 

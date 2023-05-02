@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 
-const onlineUrl='https://school-api-s1sp.onrender.com/students'
+const onlineUrl = "https://school-api-s1sp.onrender.com/students";
 const localurl = "http://localhost:5000/students";
-const url=onlineUrl
+const url = onlineUrl;
 const ScienceForm = () => {
   const [students, setStudents] = useState([]);
   const [science, setScience] = useState("");
@@ -78,23 +78,28 @@ const ScienceForm = () => {
       </div>
       <hr />
       <h3>Science Marks</h3>
-      <table className="ms-4 table w-75">
-        <thead className="text-center">
-        <th>Name</th>
-        <th>Science</th>
-        </thead>
-       
-        {students.map((student) => (
-          <>
-            <tbody>
-              <tr>
-                <td>{student.name}</td>
-                <td>{student.science}</td>
-              </tr>
-            </tbody>
-          </>
-        ))}
-      </table>
+      <div className="containerTable">
+        
+        <table className="ms-4 table w-75  table-dark table-striped">
+          <thead className="text-center">
+            <th>StdID</th>
+            <th>Name</th>
+            <th>Science</th>
+          </thead>
+
+          {students.map((student) => (
+            <>
+              <tbody>
+                <tr>
+                  <td>{student.id}</td>
+                  <td>{student.name}</td>
+                  <td>{student.science}</td>
+                </tr>
+              </tbody>
+            </>
+          ))}
+        </table>
+      </div>
     </>
   );
 };
