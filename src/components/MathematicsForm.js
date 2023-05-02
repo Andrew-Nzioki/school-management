@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 
-const url = "http://localhost:5000/students";
-
+const onlineUrl='https://school-api-s1sp.onrender.com/students'
+const localurl = "http://localhost:5000/students";
+const url=onlineUrl
 const MathematicsForm = () => {
   const [students, setStudents] = useState([]);
   const [mathematics, setMathematics] = useState("");
@@ -79,10 +80,13 @@ const MathematicsForm = () => {
       </div>
 
       <hr />
-      <table className="ms-2">
-        <thead className="text-center">Scince Marks</thead>
+      <h3>Mathematics Marks</h3>
+      <table className="ms-2 table w-75">
+        <thead className="text-center">
         <th>Name</th>
         <th>Science</th>
+        </thead>
+        
         {students.map((student) => (
           <>
             <tbody>

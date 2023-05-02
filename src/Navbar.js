@@ -14,7 +14,7 @@ const linkStyle = {
 const Nav = () => {
   return (
     <NavUnlisted>
-      <Link to="/English" style={linkStyle}>
+      <Link to="/EnglishForm" style={linkStyle}>
         English
       </Link>
       <Link to="/MathematicsForm" style={linkStyle}>

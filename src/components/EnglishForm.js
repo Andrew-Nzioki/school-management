@@ -3,9 +3,9 @@ import React, { useEffect, useState } from "react";
 const onlineUrl='https://school-api-s1sp.onrender.com/students'
 const localurl = "http://localhost:5000/students";
 const url=onlineUrl
-const ScienceForm = () => {
+const EnglishForm = () => {
   const [students, setStudents] = useState([]);
-  const [science, setScience] = useState("");
+  const [english, setEnglish] = useState("");
 
   useEffect(() => {
     fetch(url)
@@ -18,7 +18,7 @@ const ScienceForm = () => {
       if (student.id === id) {
         return {
           ...student,
-          science: e.target.value,
+          english: e.target.value,
         };
       }
       return student;
@@ -36,7 +36,7 @@ const ScienceForm = () => {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ science: parseInt(student.science) }),
+          body: JSON.stringify({ science: parseInt(student.english) }),
         });
 
         if (!res.ok) {
@@ -49,7 +49,7 @@ const ScienceForm = () => {
 
     // Reset the form
     setStudents((prevStudents) =>
-      prevStudents.map((prevStudent) => ({ ...prevStudent, science: "" }))
+      prevStudents.map((prevStudent) => ({ ...prevStudent, english: "" }))
     );
   }
 
@@ -57,16 +57,16 @@ const ScienceForm = () => {
     <>
       <div className="formItems">
         <form className="w-25 form-floating" onSubmit={handleSubmit}>
-          <h5>Science Marks</h5>
+          <h5>English Marks</h5>
           {students.map((student) => (
             <div key={student.id}>
-              <label htmlFor={`science-${student.id}`}>{student.name}</label>
+              <label htmlFor={`english-${student.id}`}>{student.name}</label>
               <input
                 type="text"
                 className="form-control mb-2"
-                id={`science-${student.id}`}
+                id={`english-${student.id}`}
                 placeholder="Marks"
-                value={student.science || ""}
+                value={student.english || ""}
                 onChange={(e) => handleInput(e, student.id)}
               />
             </div>
@@ -77,11 +77,11 @@ const ScienceForm = () => {
         </form>
       </div>
       <hr />
-      <h3>Science Marks</h3>
+      <h3>English Marks</h3>
       <table className="ms-4 table w-75">
         <thead className="text-center">
         <th>Name</th>
-        <th>Science</th>
+        <th>English</th>
         </thead>
        
         {students.map((student) => (
@@ -89,7 +89,7 @@ const ScienceForm = () => {
             <tbody>
               <tr>
                 <td>{student.name}</td>
-                <td>{student.science}</td>
+                <td>{student.english}</td>
               </tr>
             </tbody>
           </>
@@ -99,4 +99,4 @@ const ScienceForm = () => {
   );
 };
 
-export default ScienceForm;
+export default EnglishForm;
