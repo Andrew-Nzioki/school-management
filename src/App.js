@@ -1,29 +1,32 @@
-import  React,{useEffect,useState} from 'react'
-import "./App.css"
+import React, { useEffect, useState } from "react";
+import { Route, Routes } from "react-router-dom";
+import "./App.css";
+import Navbar from "./Navbar";
 
-import StudentInfo from "./components/StudentInfo"
-import SubjectGradeForm from "./components/SubjectGradeForm"
-import Header from "./components/Header"
-import StudentsList from "./components/StudentsList"
-import Filter from "./components/Filter"
-const url='http://localhost:5000/students'
+import MathematicsForm from "./components/MathematicsForm";
+import About from "./components/About";
+import Contact from "./components/Contact";
+import ScienceForm from "./components/ScienceForm";
+
+const url = "http://localhost:5000/students";
 function App() {
- const [students,setStudents]=useState([])
-useEffect(()=>{
-  fetch(url)
-  .then(res=>res.json())
-  .then(data=>setStudents(data))
-},[])
+  const [students, setStudents] = useState([]);
+  useEffect(() => {
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => setStudents(data));
+  }, []);
   return (
     <div className="App">
-      <Header />
-      <Filter/>
-      <SubjectGradeForm students={students}/>
-      <StudentInfo students={students}/>
-      <StudentsList students={students}/>
-     
+      <Navbar />
+      <Routes>
+        <Route path="MathematicsForm" element={<MathematicsForm />} />
+        <Route path="ScienceForm" element={<ScienceForm />} />
+        <Route path="about" element={<About />} />
+        <Route path="contact" element={<Contact />} />
+      </Routes>
     </div>
   );
 }
 
-export default App
+export default App;

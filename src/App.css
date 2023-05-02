@@ -150,3 +150,14 @@ thead th {
     text-align: left;
   }
 }
+
+
+.formItems {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+li{
+  list-style: none;
+}
